@@ -3,7 +3,7 @@
 ### Harlynton Castaño García
 
 
-### Installación
+### Instalación
 
 Primero clonar el repositorio:
 
