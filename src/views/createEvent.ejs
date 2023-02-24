@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crear Evento</title>
+	<%- include('partials/head') %>
+</head>
+<body>
+	<%- include('partials/nav')%>
+	<main>
+		<div class="container form-group">
+			<h1>Crear nuevo evento</h1>
+			<form action="/events/new" method="POST">
+				<label for="title" >Título:</label><br>
+				<input type="text" class="form-control" id="title" name="title"><br>
+				<label for="start">Fecha Inicio:</label><br>
+				<input type="date" class="form-control" id="start" name="start"><br>
+				<label for="end">Fecha Fin:</label><br>
+				<input type="date" class="form-control" id="end" name="end"><br>
+				<label for="resource">Ubicación:</label><br>
+				<input type="text" class="form-control" id="resource" name="resource"><br>
+				<label for="description">Descripción:</label><br>
+				<textarea id="description" class="form-control" name="description"></textarea><br>
+
+				<label for="status">Estado:</label>
+				<select class="form-control selectpicker" name="status">
+					<optgroup label="Estado">
+						<option value="true">Activo</option>
+						<option value="false">Inactivo</option>
+				</optgroup>
+				</select>
+
+				<div style="padding-left:0; padding-top:20px;">
+					<input type="submit" value="Nuevo Evento">
+				</div>
+				
+			</form>
+		</div>
+	</main>
+</body>
+</html>

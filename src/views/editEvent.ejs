@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Editar Evento</title>
+	<%- include('partials/head') %>
+</head>
+<body>
+	<%- include('partials/nav')%>
+	<main>
+		<div class="container form-group">
+			<h1>Editar evento: <%=event.title %></h1>
+			<form action="/events/<%= event.id %>" method="PUT">
+				<label for="title" >Título:</label><br>
+				<input type="text" class="form-control" id="title" name="title" value="<%=event.title %>"><br>
+				<label for="start">Fecha Inicio:</label><br>
+				<input type="date" class="form-control" id="start" name="start" value="<%=event.start %>"><br>
+				<label for="end">Fecha Fin:</label><br>
+				<input type="date" class="form-control" id="end" name="end" value="<%=event.end %>"><br>
+				<label for="resource">Ubicación:</label><br>
+				<input type="text" class="form-control" id="resource" name="resource" value="<%=event.resource %>"><br>
+				<label for="description">Descripción:</label><br>
+				<textarea id="description" class="form-control" name="description"><%=event.description %></textarea><br>
+
+				<label for="status">Estado:</label>
+				<select class="form-control selectpicker" name="status">
+					<optgroup label="Estado">
+						<option value="true">Activo</option>
+						<option value="false">Inactivo</option>
+				</optgroup>
+				</select>
+
+				<div style="padding-left:0; padding-top:20px;">
+					<input type="submit" value="Editar Evento">
+				</div>
+				
+			</form>
+		</div>
+	</main>
+</body>
+</html>
