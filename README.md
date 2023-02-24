@@ -27,6 +27,7 @@ Para ejecutar el proyecto en modo desarrollo:
 
 ```sh
 npm run dev
+```
 
 Para ejecutar el proyecto en modo producción:
 
