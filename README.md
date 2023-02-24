@@ -3,27 +3,32 @@
 ### Harlynton Castaño García
 
 
-### Installation
+### Installación
 
-First, clone the repo
-
-```sh
-git clone https://github.com/FaztWeb/first-node-express-app
-```
-
-move to the folder
+Primero clonar el repositorio:
 
 ```sh
-cd first-node-express-app
+git clone https://github.com/harlynton/AGENDAS-CETAD.git
 ```
 
-install dependencies:
+Moverse a la carpeta:
+
+```sh
+cd AGENDAS-CETAD
+```
+
+Instalar dependecias:
 
 ```sh
 npm install
 ```
 
-execute the project
+Para ejecutar el proyecto en modo desarrollo:
 
 ```sh
 npm run dev
+
+Para ejecutar el proyecto en modo producción:
+
+```sh
+npm start
