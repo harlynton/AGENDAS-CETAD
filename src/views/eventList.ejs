@@ -39,9 +39,9 @@
                   <% }else{ %>
                     <a style="color:red;">Inactivo</a>
                   <% } %></td>
-                  <td><a href=<%= event.id%> class="btn btn-info" role="button">Editar</a>
+                  <td><a href="<%= event.id%>" class="btn btn-info" role="button">Editar</a>
                   </td>
-                  <td><a href="/delete/<%= event.id%>" class="btn btn-danger" role="button">Eliminar</a>
+                  <td><a href="/events/delete/<%= event._id%>" class="btn btn-danger" role="button">Eliminar</a>
                   </td>
 
               </tr>

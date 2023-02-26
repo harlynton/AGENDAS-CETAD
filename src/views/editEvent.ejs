@@ -9,7 +9,7 @@
 	<main>
 		<div class="container form-group">
 			<h1>Editar evento: <%=event.title %></h1>
-			<form action="/events/<%= event.id %>" method="PUT">
+			<form action="/events/<%= event.id %>" method="post">
 				<label for="title" >Título:</label><br>
 				<input type="text" class="form-control" id="title" name="title" value="<%=event.title %>"><br>
 				<label for="start">Fecha Inicio:</label><br>

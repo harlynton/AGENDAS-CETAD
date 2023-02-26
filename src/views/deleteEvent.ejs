@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar Evento</title>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/nav')%>
+  <main>
+    <div class="container">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-8">
+            <h4 class="font-weight-bold"><%= event.title %></h4>
+            <p class="lead">Advertencia! desea borrar este evento?</p>
+            <p class="lead">
+              <form action="/events/delete/<%= event._id %>" method="POST">
+                <button class="btn btn-danger btn-lg" type="submit">Borrar</button>
+                <a class="btn btn-light btn-lg" href="/">Cancelar</a>
+              </form>
+            </p>
+          </div>
+          <div class="col-4">
+            <h1 class="font-weight-bolder text-danger float-right">
+              <i class="fa fa-trash"></i>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+

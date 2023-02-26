@@ -17,10 +17,13 @@ export const getEventList = async(req, res) =>{
 //Recuperar evento por ID
 export const getEventById = async(req,res) =>{
   try {
-    const event = await Event.findById(req.params.id);
-    res.render("editEvent",{event})
+    const id= req.params.id;
+    const event = await Event.findById(id);
+    res.render("editEvent",{
+      event:event
+    })
   } catch (error) {
-    
+    throw new Error(error);
   }
 }
 
@@ -63,8 +66,7 @@ export const createEvent = async(req, res) => {
 export const editEvent = async(req,res) =>{
   const eventID = mongoose.Types.ObjectId(req.params.id); 
   const otroID = eventID.toString()
-  //const eventID = req.params.id 
-  console.log("🚀 ~ file: eventController.js:65 ~ editEvent ~ eventID:", otroID)
+
   const newData= req.body;
   try {
     const event = Event.findById(otroID)
@@ -77,11 +79,24 @@ export const editEvent = async(req,res) =>{
   }
 }
 
+//Cargar evento a borrar
+export const getDeleteEvent = async(req,res) =>{
+  try {
+    const id = req.params.id;
+    const event = await Event.findById(id).exec();
+    res.render('deleteEvent',{
+      event:event
+    })
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
 //Borrar evento
 export const deleteEvent= async(req, res) =>{
   const eventID= req.params.id;
   try {
-    const deletedEvent = await Event.deleteOne(eventID)
+    const deletedEvent = await Event.findByIdAndRemove(eventID)
     res.redirect('/events/list');
   } catch (error) {
     throw new Error(error.message);
